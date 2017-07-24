@@ -1,0 +1,33 @@
+ *{
+  padding: 0;
+  margin: 0;
+}
+html
+{
+  font-size: 62.5%;
+}
+body
+{
+  font-size: $base-font-size;
+  font-family: Helvetica,Arial,sans-serif;
+}
+h1{
+  font-weight: 300;
+  margin-bottom: $space;
+}
+h2{
+  font-size: $big-font-size;
+  margin-bottom: $space;
+}
+a{
+  color: black;
+}
+p{
+  margin-bottom: $space;
+}
+input[type=text] ,input[type=email],input[type=password]{
+  border: 1px solid $input-border;
+  font-size: $base-font-size;
+  margin-bottom: $space;
+  padding: $input-spacing;
+}
