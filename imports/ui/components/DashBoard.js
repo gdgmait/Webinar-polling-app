@@ -2,6 +2,7 @@ import {Meteor} from 'meteor/meteor';
 import {History} from '/client/main';
 import React from 'react';
 import PrivateHeader from './PrivateHeader';
+import WebinarList from './WebinarList';
 
 export default class DashBoard extends React.Component{
   componentWillMount(){
@@ -13,9 +14,9 @@ export default class DashBoard extends React.Component{
   render(){
     return (
       <div>
-        <PrivateHeader title="Dashboard"/>
+        <PrivateHeader title="Webinar Poll"/>
         <div className="page-content">
-          <p>DashBoard</p>
+          <WebinarList/>
         </div>
       </div>
     );

@@ -1,3 +1,3 @@
-# Boilerplate Meteor project
+# Webinar Polling
 
-This includes a basic react and auth setup.
+A Webinar Polling app made for Google Developer Group mait.

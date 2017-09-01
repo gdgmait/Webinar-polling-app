@@ -12,7 +12,7 @@ export default class Signup extends React.Component{
   componentWillMount(){
     if (Meteor.userId())
     {
-      History.replace('/links');
+      History.replace('/dashboard');
     }
   }
   formsubmit(e)
@@ -38,10 +38,6 @@ export default class Signup extends React.Component{
         });
       }
     });
-    /*this.setState({
-      error:'Something went wrong'
-    });
-    */
   }
   render(){
     return (
