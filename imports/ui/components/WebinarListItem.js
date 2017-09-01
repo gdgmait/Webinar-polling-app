@@ -9,8 +9,9 @@ export default class WebinarListItem extends React.Component {
     Meteor.call('webinar.downvote',this.props.webinar._id);
   }
   render(){
+    let className=`item item--position-${this.props.rank}`;
     return (
-      <div className="item">
+      <div className={className}>
         <p className="item__message">{this.props.webinar.title}</p>
         <p>
           <button className="button button--pill" onClick={this.upvote.bind(this)}>Upvote</button>

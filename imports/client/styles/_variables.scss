@@ -2,7 +2,14 @@
 $brand-primary:#6666ff;
 $grey:#dddddd;
 $light-grey:#f9f9f9;
+$black-grey:#555555;
 $dark-grey:#777777;
+$green:#e4ede0;
+$green-alt:darken($green,15%);
+$blue:#dfe7ed;
+$blue-alt:darken($blue,15%);
+$red:#eddfdf;
+$red-alt:darken($red,15%);
 //spaces
 $space:1.4rem;
 $site-max-width:50rem;
@@ -25,12 +32,12 @@ $boxed-view-border:$grey;
 //buttons
 $button-bg:$brand-primary;
 $button-color:white;
-$button-pill-color:$brand-primary;
+$button-pill-color:$black-grey;
 $button--secondary-bg: $light-grey;
 $button--secondary-color:$dark-grey;
 $button--secondary-border:$grey;
 
 //item
-$item-bg:$light-grey;
+$item-bg:white;
 $item-border:darken($item-bg,8%);
-$item-message-color:$dark-grey;
+$item-message-color:$black-grey;

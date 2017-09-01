@@ -11,8 +11,10 @@ class WebinarList extends React.Component {
       return <p>No lectures here.</p>
     }
     else {
+      let i=0;
       return this.props.webinars.map((webinar)=>{
-        return <WebinarListItem key={webinar._id} webinar={webinar}/>
+        let rank=++i;
+        return <WebinarListItem key={webinar._id} webinar={webinar} rank={rank}/>
       });
     }
   }
