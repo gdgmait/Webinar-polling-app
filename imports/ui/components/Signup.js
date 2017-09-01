@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Accounts} from 'meteor/accounts-base';
+import {History} from '/imports/routes/routes';
 
 export default class Signup extends React.Component{
   constructor(props){

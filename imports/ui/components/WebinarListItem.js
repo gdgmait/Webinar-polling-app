@@ -10,11 +10,13 @@ export default class WebinarListItem extends React.Component {
   }
   render(){
     return (
-      <div>
-        <p>{this.props.webinar.title}</p>
-        <button onClick={this.upvote.bind(this)}>Upvote</button>
-        <button onClick={this.downvote.bind(this)}>Downvote</button>
-        <p>{this.props.webinar.upvotes}</p>
+      <div className="item">
+        <p className="item__message">{this.props.webinar.title}</p>
+        <p>
+          <button className="button button--pill" onClick={this.upvote.bind(this)}>Upvote</button>
+          <button className="button button--pill" onClick={this.downvote.bind(this)}>Downvote</button>
+        </p>
+        <p className="item__message">{this.props.webinar.upvotes}</p>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import {Meteor} from 'meteor/meteor';
-import {History} from '/client/main';
+import {History} from '/imports/routes/routes';
 import React from 'react';
 import PrivateHeader from './PrivateHeader';
 import WebinarList from './WebinarList';

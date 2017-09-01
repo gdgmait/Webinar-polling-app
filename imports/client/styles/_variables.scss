@@ -1,5 +1,5 @@
 //Colors
-$brand-primary:#5b4681;
+$brand-primary:#6666ff;
 $grey:#dddddd;
 $light-grey:#f9f9f9;
 $dark-grey:#777777;
@@ -18,8 +18,9 @@ $input-border:$grey;
 $input-spacing:1rem;
 
 //boxed-view
-$boxed-view-overlay-bg:$grey;
+$boxed-view-overlay-bg:white;
 $boxed-view-bg: white;
+$boxed-view-border:$grey;
 
 //buttons
 $button-bg:$brand-primary;

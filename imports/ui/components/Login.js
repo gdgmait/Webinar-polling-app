@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Meteor} from 'meteor/meteor';
+import {History} from '/imports/routes/routes';
 
 export default class Login extends React.Component {
   constructor(props){
@@ -13,7 +14,7 @@ export default class Login extends React.Component {
   componentWillMount(){
     if (Meteor.userId())
     {
-      History.replace('/links');
+      History.replace('/dashboard');
     }
   }
   formsubmit(e)
@@ -45,7 +46,7 @@ export default class Login extends React.Component {
             <input type="password" ref="password" name="password" placeholder="Password"/>
             <button type="Submit" className="button">Login</button>
           </form>
-          <Link to="/signup">Need an account?</Link>
+          <p><Link to="/signup">Need an account?</Link></p>
         </div>
       </div>
     );

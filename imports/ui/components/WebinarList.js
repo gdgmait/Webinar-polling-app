@@ -3,6 +3,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 import React from 'react';
 import {Webinars} from '/imports/api/webinars';
 import WebinarListItem from './WebinarListItem';
+import FlipMove from 'react-flip-move';
 
 class WebinarList extends React.Component {
   renderWebinarList(){
@@ -18,7 +19,9 @@ class WebinarList extends React.Component {
   render(){
     return (
       <div>
-        {this.renderWebinarList()}
+        <FlipMove easing="ease-out">
+          {this.renderWebinarList()}
+        </FlipMove>
       </div>
     );
   }

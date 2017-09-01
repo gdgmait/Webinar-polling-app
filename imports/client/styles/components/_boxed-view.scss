@@ -16,6 +16,7 @@
 }
 .boxed-view__box{
   background-color: $boxed-view-bg;
+  border: 1px solid $boxed-view-border;
   padding: 2.4rem;
   text-align: center;
   width: 24rem;
