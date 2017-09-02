@@ -18,6 +18,9 @@
   display: inline-block;
   text-decoration: none;
 }
+.saved{
+  background-color: $button-light-bg;
+}
 .button--pill{
   background-color: transparent;
   border:1px solid $button-pill-color;
@@ -29,6 +32,7 @@
   background: none;
   margin: 0;
   padding: 0;
+  margin-right: $space;
   text-decoration: underline;
   text-transform: none;
 }
