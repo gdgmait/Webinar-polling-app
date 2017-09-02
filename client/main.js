@@ -11,5 +11,6 @@ Tracker.autorun(()=>{
 
 
 Meteor.startup(()=>{
+  Session.set('global_token',undefined);
   ReactDOM.render(routes,document.getElementById('app'));
 });
