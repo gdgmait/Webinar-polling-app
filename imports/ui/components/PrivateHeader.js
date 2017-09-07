@@ -7,7 +7,10 @@ const PrivateHeader =(props)=>{
   return (
     <div className="header">
       <div className="header-content">
-        <h1 className="header__title">{props.title}</h1>
+        <div className="header__subheader">
+          <img src="images/gdg-icon.png" className="header__image"/>
+          <h1 className="header__title">{props.title}</h1>
+        </div>
         <div className="header__rightalign">
           <Link to="/changepassword" className="button button--link-text">change Password</Link>
         <button className="button button--link-text" onClick={()=>{
