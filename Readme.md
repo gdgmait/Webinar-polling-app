@@ -13,6 +13,17 @@ meteor npm install
 ```
 meteor
 ```
+Open a new terminal and run the following command.
+
+```
+meteor mongo
+```
+Now add the documents in the webinar collection using the following command.
+This happens as and when we need to add/change topics to be displayed to the user.
+
+```
+db.webinars.insert({title:"Any title",upvotes:0});
+```
 
 ## Screenshot
 
