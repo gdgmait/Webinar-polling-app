@@ -2,6 +2,27 @@ import {Meteor} from 'meteor/meteor';
 import React from 'react';
 
 export default class WebinarListItem extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      "upvoted": false,
+    }
+  }
+  componentWillMount(){
+    Meteor.call('webinar.hasUserUpvoted',this.props.webinar._id, (error, result) => {
+      if(!error){
+        this.setState({upvoted: result});
+      }
+    });
+  }
+  changeState(){
+    this.setState({upvoted: !this.state.upvoted});
+    if(this.state.upvoted){
+      this.downvote();
+    }else{
+      this.upvote();
+    }
+  }
   upvote(){
     Meteor.call('webinar.upvote',this.props.webinar._id);
   }
@@ -10,12 +31,12 @@ export default class WebinarListItem extends React.Component {
   }
   render(){
     let className=`item item--position-${this.props.rank}`;
+    let text = this.state.upvoted ? "Downvote":"Upvote";
     return (
       <div className={className}>
         <p className="item__message">{this.props.webinar.title}</p>
         <p>
-          <button className="button button--pill" onClick={this.upvote.bind(this)}>Upvote</button>
-          <button className="button button--pill" onClick={this.downvote.bind(this)}>Downvote</button>
+          <button className="button button--pill" onClick={this.changeState.bind(this)}>{text}</button>
         </p>
         <p className="item__message">{this.props.webinar.upvotes}</p>
       </div>

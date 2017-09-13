@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import SimpleSchema from 'simpl-schema';
 import {Mongo} from 'meteor/mongo';
 
 export const Webinars=new Mongo.Collection('webinars');
@@ -17,15 +16,21 @@ Meteor.methods({
     if (!Upvotes.findOne({webinarid:_id,upvotedby:this.userId})) {
       Upvotes.insert({webinarid:_id,upvotedby:this.userId});
       Downvotes.remove({webinarid:_id,downvotedby:this.userId});
-      Webinars.update({_id},{$inc:{upvotes:1},$set:{showupvote:false}});
+      Webinars.update({_id},{$inc:{upvotes:1},$set:{showupvote:false},$addToSet:{upvoters:this.userId}});
     }
   },
   'webinar.downvote'(_id){
     if (Upvotes.findOne({webinarid:_id,upvotedby:this.userId})) {
       Upvotes.remove({webinarid:_id,upvotedby:this.userId});
       Downvotes.insert({webinarid:_id,downvotedby:this.userId});
-      Webinars.update({_id},{$inc:{upvotes:-1},$set:{showupvote:true}});
+      Webinars.update({_id},{$inc:{upvotes:-1},$set:{showupvote:true},$pull:{upvoters:this.userId}});
     }
+  },
+  'webinar.hasUserUpvoted'(_id){
+    let webinar = Webinars.findOne({_id:_id});
+    if(webinar){
+      return webinar.upvoters.indexOf(this.userId)>-1;
+    }
+    return false;
   }
-
 });
