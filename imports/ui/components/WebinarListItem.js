@@ -9,11 +9,11 @@ export default class WebinarListItem extends React.Component {
     }
   }
   componentWillMount(){
-    console.log(Meteor.call('webinar.hasUserUpvoted',this.props.webinar._id, (error, result) => {
+    Meteor.call('webinar.hasUserUpvoted',this.props.webinar._id, (error, result) => {
       if(!error){
         this.setState({upvoted: result});
       }
-    }));
+    });
   }
   changeState(){
     this.setState({upvoted: !this.state.upvoted});
