@@ -31,14 +31,12 @@ export default class WebinarListItem extends React.Component {
   }
   render(){
     let className=`item item--position-${this.props.rank}`;
-    let bgColor = this.state.upvoted ? "green" : "white";
-    let textColor = this.state.upvoted ? "white" : "green"
     let text = this.state.upvoted ? "Downvote":"Upvote";
     return (
       <div className={className}>
         <p className="item__message">{this.props.webinar.title}</p>
         <p>
-          <button className="button button--pill" style={{backgroundColor: bgColor, color: textColor}} onClick={this.changeState.bind(this)}>{text}</button>
+          <button className="button button--pill" onClick={this.changeState.bind(this)}>{text}</button>
         </p>
         <p className="item__message">{this.props.webinar.upvotes}</p>
       </div>
