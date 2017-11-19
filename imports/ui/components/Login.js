@@ -61,6 +61,7 @@ export default class Login extends React.Component {
           </form>
           <p><Link to="/signup">Need an account?</Link></p>
           <Link to="/forgotpassword" className="a--bottom">Forgot password?</Link>
+          <p className="a--bottom">Find project on <a href="https://github.com/gdgmait/Webinar-polling-app"> Github </a></p>
         </div>
       </div>
     );
